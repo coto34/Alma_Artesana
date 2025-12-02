@@ -18,3 +18,16 @@ python-dotenv>=1.0.0
 
 # Password validation
 django-password-validators>=1.7.0
+
+# Production server
+gunicorn>=21.0.0
+
+# PostgreSQL (for Railway)
+psycopg2-binary>=2.9.0
+dj-database-url>=2.1.0
+
+# Static files
+whitenoise>=6.6.0
+
+# HTTP requests (for Pagadito)
+requests>=2.31.0
