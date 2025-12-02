@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-=l@t&2y6#^mtu3d0e$jiz(varz_s$o_d36a4_wey7)^k_dpj@0
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['almaartesana-production.up.railway.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
