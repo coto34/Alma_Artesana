@@ -1,0 +1,167 @@
+/* =====================================================
+   WISHLIST PAGE
+   Alma Artesana
+   ===================================================== */
+
+.wishlist-page {
+  min-height: 100vh;
+  background: #FAF3E7;
+  padding: 2rem 0 4rem;
+}
+
+.wishlist-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Empty Wishlist */
+.empty-wishlist {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: white;
+  border-radius: 20px;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.empty-wishlist .empty-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FEE2E2;
+  border-radius: 50%;
+}
+
+.empty-wishlist .empty-icon svg {
+  width: 40px;
+  height: 40px;
+  color: #DC2626;
+}
+
+.empty-wishlist h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.75rem;
+  color: #4C2A0A;
+  margin-bottom: 0.75rem;
+}
+
+.empty-wishlist p {
+  color: #6B3B1C;
+  margin-bottom: 2rem;
+}
+
+.btn-shop {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: #E85A0C;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-shop:hover {
+  background: #C94A08;
+  transform: translateY(-2px);
+}
+
+/* Wishlist Header */
+.wishlist-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.wishlist-header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  color: #4C2A0A;
+}
+
+.wishlist-count {
+  font-size: 0.9rem;
+  color: #6B3B1C;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 50px;
+}
+
+/* Wishlist Grid */
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.wishlist-item {
+  position: relative;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.remove-btn:hover {
+  background: #FEE2E2;
+}
+
+.remove-btn svg {
+  width: 16px;
+  height: 16px;
+  color: #DC2626;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .wishlist-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .wishlist-page {
+    padding: 1rem 0 3rem;
+  }
+
+  .wishlist-page .container {
+    padding: 0 1rem;
+  }
+
+  .wishlist-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .wishlist-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wishlist-grid {
+    grid-template-columns: 1fr;
+  }
+}
