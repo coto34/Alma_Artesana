@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with base config
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: process.env.REACT_APP_API_URL || '/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -52,9 +52,10 @@ api.interceptors.response.use(
       const refreshToken = getRefreshToken();
       if (refreshToken) {
         try {
-          const response = await axios.post('/api/auth/refresh/', {
-            refresh: refreshToken
-          });
+          const response = await axios.post(
+            `${process.env.REACT_APP_API_URL || '/api'}/auth/refresh/`,
+            { refresh: refreshToken }
+          );
           
           const { access } = response.data;
           localStorage.setItem(TOKEN_KEY, access);
@@ -174,6 +175,16 @@ export const getOrders = () => api.get('/orders/');
 export const getOrder = (orderNumber) => api.get(`/orders/${orderNumber}/`);
 
 export const createOrder = (orderData) => api.post('/orders/create/', orderData);
+
+// =====================================================
+// PAYMENT ENDPOINTS
+// =====================================================
+
+export const initiatePayment = (orderNumber, returnUrl) =>
+  api.post('/payment/initiate/', { order_number: orderNumber, return_url: returnUrl });
+
+export const verifyPayment = (orderNumber, token) =>
+  api.post('/payment/verify/', { order_number: orderNumber, token });
 
 // =====================================================
 // UTILITY
